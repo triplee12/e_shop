@@ -10,10 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-from pathlib import Path
 import os
 import json
 import sys
+from pathlib import Path
+import braintree
 from django.core.exceptions import ImproperlyConfigured
 from django.urls import reverse_lazy
 
@@ -58,6 +59,7 @@ INSTALLED_APPS = [
     'shops.apps.ShopsConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -138,6 +140,17 @@ USE_TZ = True
 # Email configuration
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# Braintree settings
+BRAINTREE_MERCHANT_ID = get_secret('BRAINTREE_MERCHANT_ID') # Merchant ID
+BRAINTREE_PUBLIC_KEY = get_secret('BRAINTREE_PUBLIC_KEY') # Public Key
+BRAINTREE_PRIVATE_KEY = get_secret('BRAINTREE_PRIVATE_KEY') # Private Key
+
+BRAINTREE_CONF = braintree.Configuration(
+    braintree.Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
