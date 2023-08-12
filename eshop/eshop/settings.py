@@ -31,6 +31,7 @@ def get_secret(setting):
         error_msg = f'Set the {setting} environment variable'
         raise ImproperlyConfigured(error_msg)
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -60,6 +61,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
+    'coupons.apps.CouponsConfig',
 ]
 
 MIDDLEWARE = [
@@ -141,9 +143,9 @@ USE_TZ = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Braintree settings
-BRAINTREE_MERCHANT_ID = get_secret('BRAINTREE_MERCHANT_ID') # Merchant ID
-BRAINTREE_PUBLIC_KEY = get_secret('BRAINTREE_PUBLIC_KEY') # Public Key
-BRAINTREE_PRIVATE_KEY = get_secret('BRAINTREE_PRIVATE_KEY') # Private Key
+BRAINTREE_MERCHANT_ID = get_secret('BRAINTREE_MERCHANT_ID')  # Merchant ID
+BRAINTREE_PUBLIC_KEY = get_secret('BRAINTREE_PUBLIC_KEY')  # Public Key
+BRAINTREE_PRIVATE_KEY = get_secret('BRAINTREE_PRIVATE_KEY')  # Private Key
 
 BRAINTREE_CONF = braintree.Configuration(
     braintree.Environment.Sandbox,
