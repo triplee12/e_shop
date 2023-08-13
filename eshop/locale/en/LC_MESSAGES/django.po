@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-13 20:34+0100\n"
+"POT-Creation-Date: 2023-08-13 21:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,13 +26,33 @@ msgstr ""
 msgid "Coupon"
 msgstr ""
 
-#: eshop/settings.py:137
+#: eshop/settings.py:140
 msgid "English"
 msgstr "Inglés"
 
-#: eshop/settings.py:138
+#: eshop/settings.py:141
 msgid "Spanish"
 msgstr "Español"
+
+#: eshop/urls.py:24
+msgid "admin/"
+msgstr ""
+
+#: eshop/urls.py:25
+msgid "cart/"
+msgstr ""
+
+#: eshop/urls.py:26
+msgid "orders/"
+msgstr ""
+
+#: eshop/urls.py:27
+msgid "payment/"
+msgstr ""
+
+#: eshop/urls.py:28
+msgid "coupons/"
+msgstr ""
 
 #: orders/models.py:14
 msgid "first name"
@@ -57,6 +77,22 @@ msgstr "código postal"
 #: orders/models.py:19
 msgid "city"
 msgstr "ciudad"
+
+#: orders/urls.py:10
+msgid "create/"
+msgstr ""
+
+#: payment/urls.py:10
+msgid "process/"
+msgstr ""
+
+#: payment/urls.py:11
+msgid "done/"
+msgstr ""
+
+#: payment/urls.py:12
+msgid "canceled/"
+msgstr ""
 
 #: templates/orders/order/create.html:4 templates/orders/order/create.html:8
 msgid "Checkout"
