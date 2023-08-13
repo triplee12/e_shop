@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     # Third party libraries
     'rosetta',
     'parler',
+    'localflavor',
     # Self hosted libraries
     'shops.apps.ShopsConfig',
     'cart.apps.CartConfig',
